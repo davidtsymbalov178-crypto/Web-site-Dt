@@ -29,7 +29,7 @@ export default function Skills() {
             <h2 className="section-title mb-8 sm:mb-10">Навыки</h2>
           </RevealItem>
           <motion.ul
-            className="grid grid-cols-2 gap-x-6 gap-y-3 sm:gap-x-8 lg:grid-cols-3"
+            className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
             variants={{
               hidden: {},
               show: { transition: { staggerChildren: 0.05, delayChildren: 0.1 } },
@@ -39,9 +39,11 @@ export default function Skills() {
               <motion.li
                 key={skill}
                 variants={itemVariant}
-                className="text-base text-neutral-700 before:mr-2 before:text-neutral-400 before:content-['·'] sm:text-[0.95rem] lg:text-base"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
               >
-                {skill}
+                <span className="skill-tag font-medium">{skill}</span>
               </motion.li>
             ))}
           </motion.ul>

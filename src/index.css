@@ -9,13 +9,21 @@
   }
 
   body {
-    @apply bg-surface text-ink antialiased;
+    @apply bg-surface text-ink antialiased transition-colors duration-300;
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   }
 
+  html.dark body {
+    @apply bg-surface-dark text-ink-dark;
+  }
+
   ::selection {
     @apply bg-neutral-200 text-ink;
+  }
+
+  html.dark ::selection {
+    @apply bg-neutral-700 text-white;
   }
 }
 
@@ -28,6 +36,10 @@
     pointer-events: none;
     opacity: 0.03;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  html.dark .site-grain::before {
+    opacity: 0.06;
   }
 
   .page-wrap {
@@ -43,6 +55,10 @@
     @apply font-display text-[3.5rem] font-bold leading-none text-neutral-200 sm:text-[5rem] lg:text-[6rem];
   }
 
+  html.dark .section-num {
+    @apply text-neutral-800;
+  }
+
   .section-title {
     @apply font-display text-[1.65rem] font-semibold tracking-tight sm:text-3xl lg:text-4xl;
   }
@@ -51,12 +67,24 @@
     @apply text-base leading-[1.75] text-neutral-600 sm:text-[1.05rem] lg:text-lg lg:leading-[1.8];
   }
 
+  html.dark .body-text {
+    @apply text-neutral-400;
+  }
+
   .link-underline {
     @apply underline decoration-neutral-400 underline-offset-[5px] transition-colors hover:decoration-ink hover:text-ink;
   }
 
+  html.dark .link-underline {
+    @apply decoration-neutral-600 hover:decoration-white hover:text-white;
+  }
+
   .btn-main {
     @apply inline-flex min-h-[48px] items-center justify-center rounded-full bg-ink px-7 py-3 text-[0.95rem] font-medium text-white transition-colors hover:bg-neutral-800 sm:min-h-[52px] sm:px-8 sm:text-base lg:px-9 lg:py-3.5;
+  }
+
+  html.dark .btn-main {
+    @apply bg-white text-ink hover:bg-neutral-200;
   }
 
   .section-pad {
@@ -65,6 +93,22 @@
 
   .section-grid {
     @apply page-wrap grid gap-8 sm:gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16 xl:gap-20;
+  }
+
+  .skill-tag {
+    @apply inline-flex w-full cursor-default items-center rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-[0.95rem] text-neutral-500 transition-all duration-300 ease-out;
+  }
+
+  .skill-tag:hover {
+    @apply -translate-y-0.5 border-ink bg-ink text-white shadow-md shadow-black/10;
+  }
+
+  html.dark .skill-tag {
+    @apply border-neutral-800 bg-neutral-900/50 text-neutral-400;
+  }
+
+  html.dark .skill-tag:hover {
+    @apply border-white bg-white text-ink shadow-white/5;
   }
 
   .work-preview {
@@ -83,18 +127,34 @@
     @apply absolute inset-0 animate-pulse rounded-2xl bg-neutral-200;
   }
 
+  html.dark .work-preview-skeleton {
+    @apply bg-neutral-800;
+  }
+
   .work-preview-placeholder {
     @apply flex aspect-[16/10] flex-col items-center justify-center gap-2 rounded-2xl bg-neutral-100 p-6 text-center text-sm text-neutral-500;
   }
 
+  html.dark .work-preview-placeholder {
+    @apply bg-neutral-900 text-neutral-500;
+  }
+
   .work-preview-placeholder code {
     @apply rounded bg-neutral-200 px-2 py-1 font-mono text-xs text-neutral-600;
+  }
+
+  html.dark .work-preview-placeholder code {
+    @apply bg-neutral-800 text-neutral-400;
   }
 }
 
 @layer utilities {
   .border-subtle {
     @apply border-neutral-300/80;
+  }
+
+  html.dark .border-subtle {
+    @apply border-neutral-800;
   }
 
   .nav-offset {

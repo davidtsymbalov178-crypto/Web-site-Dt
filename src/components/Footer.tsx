@@ -6,7 +6,7 @@ export default function Footer() {
       className="relative z-10 border-t border-subtle py-8 sm:py-10"
       style={{ paddingBottom: 'calc(2rem + env(safe-area-inset-bottom, 0px))' }}
     >
-      <div className="page-wrap flex flex-col gap-3 text-sm text-neutral-500 sm:flex-row sm:items-center sm:justify-between sm:text-[0.95rem]">
+      <div className="page-wrap flex flex-col gap-3 text-sm text-neutral-500 dark:text-neutral-500 sm:flex-row sm:items-center sm:justify-between sm:text-[0.95rem]">
         <p>© {year} David Tsymbalov</p>
         <a
           href="https://t.me/DavidTsymbalovWork"

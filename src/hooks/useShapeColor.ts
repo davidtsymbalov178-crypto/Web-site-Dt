@@ -1,10 +1,10 @@
-export const SHAPE_COLOR = '#9ca3af'
-export const SHAPE_GLOW = 'none'
+import { useTheme } from '../context/ThemeContext'
 
 export function useShapeColor() {
-  return SHAPE_COLOR
+  const { theme } = useTheme()
+  return theme === 'dark' ? '#6b7280' : '#9ca3af'
 }
 
 export function useShapeGlow() {
-  return SHAPE_GLOW
+  return 'none'
 }

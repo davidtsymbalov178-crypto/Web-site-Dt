@@ -1,3 +1,4 @@
+import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -9,17 +10,19 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="site-grain min-h-screen">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Work />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="site-grain min-h-screen">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Work />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
