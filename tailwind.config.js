@@ -6,11 +6,11 @@ export default {
     extend: {
       colors: {
         surface: {
-          DEFAULT: '#f7f7f5',
+          DEFAULT: '#f2f1ed',
           dark: '#0c0c0c',
         },
         ink: {
-          DEFAULT: '#111111',
+          DEFAULT: '#0a0a0a',
           dark: '#f5f5f5',
         },
       },

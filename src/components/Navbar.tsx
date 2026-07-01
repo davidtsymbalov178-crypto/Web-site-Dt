@@ -26,16 +26,18 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
 
+  const headerBg = scrolled
+    ? theme === 'dark'
+      ? 'border-b border-subtle bg-[#0c0c0c]/88 backdrop-blur-lg'
+      : 'border-b border-subtle bg-[#f2f1ed]/88 backdrop-blur-lg'
+    : 'bg-transparent'
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 ${
-        scrolled
-          ? 'border-b border-subtle bg-surface/92 backdrop-blur-lg dark:bg-surface-dark/92'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 ${headerBg}`}
     >
       <nav className="nav-inner">
         <a

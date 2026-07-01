@@ -15,7 +15,7 @@ export default function Hero() {
             <h1 className="font-display text-[clamp(2.5rem,10vw,5rem)] font-bold leading-[0.95] tracking-tight sm:text-[clamp(3rem,8vw,6.5rem)] lg:text-[clamp(3.5rem,6vw,7rem)]">
               David
               <br />
-              <span className="text-neutral-400 dark:text-neutral-500">Tsymbalov</span>
+              <span className="text-neutral-500 dark:text-neutral-500">Tsymbalov</span>
             </h1>
           </RevealItem>
 
